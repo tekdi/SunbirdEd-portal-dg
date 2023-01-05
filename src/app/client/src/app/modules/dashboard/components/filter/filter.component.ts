@@ -214,14 +214,26 @@ export class FilterComponent implements OnInit, OnDestroy {
   }
 
   getDateRange({ startDate, endDate }, columnRef) {
+    console.log('startDate', startDate);
+    console.log('endDate', endDate);
     this.selectedStartDate = moment(startDate).subtract(1, 'day');
     this.selectedEndDate = moment(endDate).add(1, 'day');
+    console.log('this.selectedStartDate', this.selectedStartDate);
+    console.log('this.selectedEndDate', this.selectedEndDate);
     const dateRange = [];
     const currDate = moment(this.selectedStartDate).startOf('day');
     const lastDate = moment(this.selectedEndDate).startOf('day');
+    console.log('currDate', currDate);
+    console.log('lastDate', lastDate);
+    console.log('cond 1 ', currDate.add(1, 'days')); // TODO: log!
+    console.log('cond 2 ', currDate.add(1, 'days').diff(lastDate)); // TODO: log!
     while (currDate.add(1, 'days').diff(lastDate) < 0) {
       dateRange.push(currDate.clone().format('DD-MM-YYYY'));
     }
+    console.log('dateRange ', dateRange); // TODO: log!
+    setTimeout(() => {
+      console.log('dateRange ', dateRange); // TODO: log!
+    }, 3000);
     this.filtersFormGroup.get(columnRef).setValue(dateRange);
   }
 
