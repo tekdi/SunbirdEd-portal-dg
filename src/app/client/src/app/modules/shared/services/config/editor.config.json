@@ -1125,7 +1125,8 @@
         "mimeCollection": "application/vnd.ekstep.content-collection",
         "cloudStorage": {
             "presigned_headers": {
-               "x-ms-blob-type": "BlockBlob"
+               "x-ms-blob-type": "BlockBlob",
+               "Content-Type": "application/octet-stream"
             }
         }
     },
