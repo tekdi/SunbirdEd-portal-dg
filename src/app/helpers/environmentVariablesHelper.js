@@ -94,11 +94,11 @@ let envVariables = {
   //TTL
   sunbird_anonymous_session_ttl: 10 * 60 * 1000,
   sunbird_session_ttl:24 * 60 * 60 * 1000,
-​
+
   //Cache config
   CACHE_STORE:  "memory",
   CACHE_TTL: 1800,
-​
+  
   //Healthcheck flags
   sunbird_portal_health_check_enabled: "true",
   sunbird_learner_service_health_status: "true",
