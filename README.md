@@ -173,9 +173,10 @@ Installing Sunbird requires two primary software components:
     |   ├── /.circleci                           # 
     │   |   └── config.yml                       # Circleci Configuration file
     |   ├── /experiments                         # -|-
-    |   ├── /src/app                             # Sunbird portal or web application
-    │   |   ├── /client                          # -|-
-    │   |   |    └── src                         # -|-
+    |   ├── /src/desktop                         # Sunbird portal desktop application
+    |   ├── /src/app                             # Sunbird portal backend modules
+    │   |   ├── /client                          # Sunbird web Application
+    │   |   |    └── src                         # Angular Components and Modules
     │   |   ├── /helpers                         # Helpers and Service file
     │   |   ├── /libs                            # Sunbird utilities
     │   |   ├── /proxy                           # Redirection to respective services
