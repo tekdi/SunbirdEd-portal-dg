@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout:
           path: ~/portal
-      - run: 
+      - run:
           name: Installing prerequisites
           command: |-
             sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6DB5542C356545CF # Adding Heroku keys, else the apt update will fail.
@@ -39,7 +39,9 @@ jobs:
             - ./node_modules
       - run:
           name: ng lint and building
-          command: 'mkdir -p /tmp/logs && node --max_old_space_size=6000 ./node_modules/@angular/cli/bin/ng build --prod --optimization=false --buildOptimizer=false | tee /tmp/logs/build.log'
+          command: 'mkdir -p /tmp/logs && node --max_old_space_size=6000
+            ./node_modules/@angular/cli/bin/ng build --prod --optimization=false
+            --buildOptimizer=false | tee /tmp/logs/build.log'
       - run:
           name: Executing test cases using JEST
           command: 'npm run test-coverage | tee /tmp/logs/test_cases.log'
@@ -52,8 +54,10 @@ jobs:
             unzip sonar-scanner-cli-4.6.2.2472-linux.zip
             cd -
       - run:
-         name: run sonar scanner
-         command: 'cd ~/portal && /tmp/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner'
+          name: run sonar scanner
+          command: 'cd ~/portal && /tmp/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner'
+    # The resource_class feature allows configuring CPU and RAM resources for each job. Different resource classes are available for different executors. https://circleci.com/docs/2.0/configuration-reference/#resourceclass
+    resource_class: large
 workflows:
   version: 2
   build_and_test:
