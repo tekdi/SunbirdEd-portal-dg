@@ -53,22 +53,18 @@ export class CopyContentService {
     this.contentService = contentService;
     this.frameworkService = frameworkService;
   }
- //question set draft
   /**
    * This method calls the copy API and call the redirecttoeditor method after success
-   * @param {contentData} ContentData Content data which will be copied
+   * @param {contentData} ContentData Content data which will be copied & question set.
    */
   copyContent(contentData: ContentData) {
-    if (contentData?.mimeType === 'application/vnd.sunbird.questionset') {
-    return this.copyQuestionSet(contentData); 
-    }
-    else {
+    let urlPath = _.get(contentData,'mimeType') === 'application/vnd.sunbird.questionset' ? this.config.urlConFig.URLS.QUESTIONSET.COPY : this.config.urlConFig.URLS.CONTENT.COPY;
       return this.userService.userOrgDetails$.pipe(mergeMap(data => { // fetch user org details before copying content
         this.frameworkService.initialize();
         return this.formatData(contentData).pipe(
           switchMap((param: any) => {
             const option = {
-              url: this.config.urlConFig.URLS.CONTENT.COPY + '/' + contentData.identifier,
+              url: urlPath + '/' + contentData.identifier,
               data: param
             };
             return this.contentService.post(option).pipe(map((response: ServerResponse) => {
@@ -80,7 +76,6 @@ export class CopyContentService {
           })
         );
       }));
-    }
   }
   /**
    * @since - 1.#SH-66 || 2.#SH-362
@@ -120,7 +115,6 @@ export class CopyContentService {
       return response;
     }));
   }
-//question set draft
   /**
    * This method prepares the request body for the copy API
    * @param {contentData} ContentData Content data which will be copied
@@ -136,7 +130,7 @@ export class CopyContentService {
     if (!_.isEmpty(userData.lastName)) {
       creator = userData.firstName + ' ' + userData.lastName;
     }
-    if (contentData?.mimeType === 'application/vnd.sunbird.questionset') {
+    if (_.get(contentData,'mimeType') === 'application/vnd.sunbird.questionset') {
       req = {
         request: {
           questionset: {
@@ -166,7 +160,6 @@ export class CopyContentService {
           }
         }
       };
-    console.log('request body', req);
     if (_.lowerCase(contentData.contentType) === 'course') {
       req.request.content.framework = contentData.framework;
       return of(req);
@@ -196,7 +189,10 @@ export class CopyContentService {
       }
     } else if (contentData.mimeType === 'application/vnd.ekstep.ecml-archive') {
       url = `/workspace/content/edit/content/${copiedIdentifier}/draft/${contentData.framework}/Draft`;
-    } else {
+    } else if (_.get(contentData,'mimeType') === 'application/vnd.sunbird.questionset') {
+      url = `/workspace/edit/QuestionSet/${copiedIdentifier}/allcontent/Draft`;
+    }
+    else {
       url = `/workspace/content/edit/generic/${copiedIdentifier}/uploaded/${contentData.framework}/Draft`;
     }
     this.router.navigate([url]);
@@ -211,43 +207,5 @@ export class CopyContentService {
   openCollectionEditor(framework: string, copiedIdentifier: string) {
     const url = `/workspace/content/edit/collection/${copiedIdentifier}/Course/draft/${framework}/Draft`;
     this.router.navigate([url]);
-  }
-  //question set draft
-
-  /**
-   * @since - #SH-66
-   * @param  {contentData} questionData question data which will be copied
-   * @param  {string} copiedIdentifier New identifier of the copy question set
-   * @description - It will launch the question set editor
-   */
-  openQuestionSetEditor(questionData, copiedIdentifier: string) {
-    const url = `workspace/edit/QuestionSet/${copiedIdentifier}/allcontent/Draft`;
-    this.router.navigate([url]);
-  }
-    /**
-   * @since - 1.#SH-66 || 2.#SH-362
-   * @param  {ContentData} contentData
-   * @description - API to copy question set.
-   */
-  copyQuestionSet(contentData: ContentData) {
-    return this.userService.userOrgDetails$.pipe(mergeMap(data => { // fetch user org details before copying question set
-      this.frameworkService.initialize();
-      return this.formatData(contentData).pipe(
-        switchMap((param: any) => {
-          const option = {
-            url: this.config.urlConFig.URLS.QUESTIONSET.COPY + '/' + contentData.identifier,
-            data: param
-          };
-          console.log('option',option)
-          return this.contentService.post(option).pipe(map((response: ServerResponse) => {
-            _.forEach(response.result.node_id, (value) => {
-              console.log('value',value)
-              this.openQuestionSetEditor(param.request.content, value);
-            });
-            return response;
-          }));
-        })
-      );
-    }));
   }
 }

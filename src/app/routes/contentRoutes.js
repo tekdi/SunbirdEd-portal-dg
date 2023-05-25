@@ -82,17 +82,14 @@ module.exports = (app) => {
                 }
             })
         )
-        app.all('/content/questionset/v1/copy/:id',
+    app.post('/content/questionset/v1/copy/:id',
         proxyUtils.verifyToken(),
         isAPIWhitelisted.isAllowed(),
         proxy(contentURL, {
             limit: reqDataLimitOfContentUpload,
             proxyReqOptDecorator: proxyUtils.decorateRequestHeaders(contentURL),
             proxyReqPathResolver: (req) => {
-                console.log('I am here and trying to fix this issue')
-                console.log(
-                    '/content/questionset/v1/copy/:id called'
-                );
+                logger.info({ msg: '/content/questionset/v1/copy/:id called - ' + req.method + ' - ' + req.url });
                 return require('url').parse(contentURL + req.originalUrl.replace('/content/', '')).path
             },
             userResDecorator: (proxyRes, proxyResData, req, res) => {
