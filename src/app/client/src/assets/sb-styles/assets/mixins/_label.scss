@@ -1,0 +1,10 @@
+@mixin label-theme($label-color) {
+	border-color:($label-color);
+	background-color: $label-color;
+}
+
+@mixin label-theme-bgwhite($label-color) {
+	//border-color: darken($label-color, 2%);
+	background-color: var(--white);
+	color:($label-color);
+}

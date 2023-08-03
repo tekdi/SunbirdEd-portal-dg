@@ -1,0 +1,200 @@
+@use "src/assets/sb-styles/assets/mixins/mixins" as *;
+
+html[data-theme='default'] {
+    --primary-theme: var(--primary-color);
+    --primary-theme-hsl: 210, 97%;
+    --primary-theme-rgb: rgb(2, 79, 156);
+    --primary-theme-contrast: #fff;
+    --primary-theme-contrast-rgb: rgb(255, 255, 255);
+    --primary-theme-shade: hsl(var(--primary-theme-hsl), 56%);
+    --primary-theme-tint: hsl(var(--primary-theme-hsl), 76%);
+
+  
+    --sbt-body-bg: #E5EDF5;
+    --sbt-body-bg2: #f3f7fa;
+    --sb-header-bg: var(--primary-300); //var(--primary-300);
+
+    //global variables
+    --sbt-box-shadow-black: rgba(var(--rc-rgba-black), 0.1);
+    --sbt-box-shadow-primary: rgba(var(--primary-color-rgb), 0.1);
+    --sbt-footer-bg: #ffffff;
+    --sbt-theme-purple-selectbox: #6841B3;
+    --sbt-theme-green-selectbox: #008840;
+    --sbt-theme-blue-selectbox: #0531FF;
+    --sbt-theme-light-blue-selectbox: #171e22;
+    --sbt-theme-purple-selectbox-lbg: #F2EEFF;
+    --sbt-theme-green-selectbox-lbg: #E0F5EA;
+    --sbt-theme-blue-selectbox-lbg: #E5EDF5;
+    --sbt-theme-light-blue-selectbox-lbg: #E9F5FF;
+    --sbt-pill-hs: 212, 100%;
+    --sbt-pill-bg: var(--white);
+    --sbt-pill-bg-active: hsl(var(--sbt-pill-hs), 50%); // #0076FE
+    --sbt-pill-text: var(--black);
+    --sbt-pill-text-hover: var(--white);
+    --sbt-compt-bg: var(--sbt-body-bg);
+    --sbt-badge-bg: var(--rc-d4d3d3);
+    --sbfield-label-text: var(--gray-800);
+    --sbt-sidemenu-overlay-bg: var(--rc-rgba-black);
+    --sbt-sidemenu-bg: var(--sbt-body-bg2);
+    --sbt-green-bg: var(--white);
+    --sbt-language-dropdown-bg: var(--white);
+    --sbt-class-bar-label-text: var(--gray-800);
+    --sb-filter-bar-bg: var(--white);
+    --sb-container-bg: var(--white);
+    --sidebar-profil-header-bg: var(--sbt-body-bg);
+    --sb-linkmenu-bg: var(--white);
+    --sb-linkmenu-text: var(--primary-400);
+    --sb-linkmenu-active-text: var(--primary-400);
+    --sb-linkmenu-text-hover: var(--white);
+    --sb-btn-default-color: var(--white);
+    --sb-sidebar-menu-bg-active: var(--primary-0);
+    --sb-sidebar-menu-text: var(--primary-color);
+    --sb-graph-section-bg: var(--white);
+    --sb-linkmenu-icon-bg-hover: var(--white);
+
+    //header
+    --sb-menu-bg: var(--sb-body-bg);
+    --sb-menu-item: var(--gray-800);
+    --sb-header-bg: var(--primary-theme);
+    --sb-notification-bg: var(--white);
+    --sb-header-qrcode-btn-bg: var(--white);
+    --sb-header-qrcode-btn-border: var(--primary-300);
+    --sb-search-input-bg: var(--white);
+    --sb-search-input-text: var(--gray-200);
+    --sb-search-btn-bg: var(--primary-100);
+    --sb-search-btn-text: var(--primary-400);
+    --sb-qrcode-divider: rgba(var(--rc-rgba-primary-300), 0.34);
+    --sb-language-dropdown-bg: var(--white);
+    --sb-language-dropdown-item: var(--black);
+    --sb-language-dropdown-item-active: rgba(var(--rc-rgba-black), .03);
+    --sb-search-auto-select: var(--white);
+    --sb-footer-bg: var(--primary-color);
+    --bell-icon: var(--primary-color);
+
+    --sb-search-btn-bg: var(--gray-800);
+    --sb-search-btn-text: var(--white);
+    --sbfaq-compt-bg: var(--sbt-body-bg);
+
+    //landing page
+    --sb-landing-page-bg: var(--white);
+    --sb-landing-page-segments: var(--white);
+    --sb-landing-page-cards: var(--white);
+    --sb-landing-page-cards-desc: rgba(var(--rc-rgba-black), .68);
+    --sb-landing-page-btn: transparent;
+
+    //profile page
+    --sb-profile-certificate-bg: var(--white);
+    --sb-course-progress-status-label: #333333;
+    --sb-list-data: var(--gray-400);
+    --sb-list-items: #333333;
+    --sb-profile-bg-c-4: var(--sbt-body-bg2);
+    --sb-profile-page-basic-label-bg: var(--white);
+
+    //pagination
+    --sb-pagination-bg: var(--white);
+    --sb-pagination-item-bg: var(--sb-pagination-bg);
+    --sb-pagination-item: var(--gray-400);
+    --sb-pagination-item-active: var(--sb-pagination-item);
+
+    //filters
+    --sb-prominent-filter-bg: var(--white);
+    --sb-prominent-filter-title: rgba(var(--rc-rgba-black), .87);
+    --sb-multiple-dropdown-border: var(--gray-200);
+    --sb-multiple-dropdown-border-hover: rgba(34, 36, 38, .35);
+    --sb-multiple-dropdown-bg: transparent;
+    --sb-prominent-filter-field-color: var(--rc-4a4a4a);
+    --sb-dropdown-menu-bg: var(--white);
+    --sb-dropdown-menu-item: var(--rc-4a4a4a);
+    --sb-drodown-selection-active: #96c8da;
+    --ui-seleted-label-bg: #e8e8e8;
+    --ui-seleted-label-bg-hover: #e0e0e0;
+    --state-medium-container-bg: var(--sbt-body-bg2);
+    --sb-class-bar-bg: var(--sbt-body-bg2);
+    --sb-dropdown-menu-text: rgba(var(--rc-rgba-black), .8);
+    --ui-dropdown-menu-selected-item-bg: rgba(var(--rc-rgba-black), .03);
+    --ui-dropdown-menu-selected-item: rgba(var(--rc-rgba-black), .95);
+    --sb-filter-selected-dropdown-hover: var(--primary-color);
+    //slick slide card
+    --sb-card-bg: var(--white);
+    --sb-card-border: 0.0625rem solid var(--rc-dedede);
+    --sb-card-text: var(--gray-400);
+    --sb-card-slick-arrows-bg: var(--white);
+    --sb-profile-page-container: var(--white);
+    //myGroups
+    --sb-mygroups-bg: var(--white);
+    --groups-content-header: var(--rc-FAFAFA);
+    --kabab-menu-hover-bg: var(--gray-0);
+    --kabab-menu-dropdown-bg: var(--white);
+    --kabab-menu-dropdown-item-active: var(--primary-100);
+
+    //black header bar
+    --brand-header-tail-bg: #000000;
+    --brand-header-tail-text: #ffffff;
+    --primary-menu-link-active: #ff714a;
+
+    // Modal
+    --sb-modal-header-text: var(--white);
+    --sb-modal-content-bg: var(--white);
+    --sb-modal-actions-bg: var(--white);
+
+    // lazy loading
+    // --lazyload-bg: #f6f7f8;
+    // --grey-nuance-lighter: #eeeeee;
+    // --grey-nuance-darker: #dddddd;
+    // --fade-grey: #e8e8e8;
+
+    //cc
+    --cc-sbcard-type-bg: var(--black);
+    --cc-sbcard-type-br: var(--black);
+    --cc-sbcard-org-text: var(--black);
+    --cc-grade-pill-container-bg: var(--sbt-body-bg);
+
+    //joy theme
+    --themeflower-bg: #ffd92a;
+    --visit-helpcenter-bg: var(--white);
+    //--sbfaq-compt-bg: var(--white);
+    --signup-panel-bg: var(--white);
+
+    //explore-page
+    --sb-section-preference: var(--black);
+    --slick-dots-active-color: var(--gray-200);
+    --slick-dots-color: var(--gray-800);
+
+    .sb-single-resource {
+        .content-video__player {
+            background: var(--white);
+        }
+    }
+
+    ::placeholder {
+        color: var(--gray-800) !important;
+        opacity: 1 !important;
+        /* Firefox */
+    }
+
+    :-ms-input-placeholder,
+    ::-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #333333 !important;
+    }
+
+    .navBlock .pdf-nav-unit {
+        color: var(--white) !important;
+    }
+
+    .profile-bg-c-3 .school-id-section {
+        color: var(--black);
+    }
+
+    .user-profile-box .orange.text {
+        color: var(--red-100);
+    }
+
+    .orange-border {
+        border-color: var(--red-100);
+    }
+
+    .sb-modal-dropdown-web ul li:hover {
+        background-color: #e6e1f9;
+    }
+}

@@ -1,0 +1,55 @@
+{
+  "_from": "@project-sunbird/sb-themes@0.0.88",
+  "_id": "@project-sunbird/sb-themes@0.0.88",
+  "_inBundle": false,
+  "_integrity": "sha512-12eKzpToyjJAKTLLFWq9Zo3+Y6tzi2GE0YBNbErfMxs9iAubliqApkwGMH/ry2qYhV8S/uiEcE4JPwtX2HZcYA==",
+  "_location": "/@project-sunbird/sb-themes",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@project-sunbird/sb-themes@0.0.88",
+    "name": "@project-sunbird/sb-themes",
+    "escapedName": "@project-sunbird%2fsb-themes",
+    "scope": "@project-sunbird",
+    "rawSpec": "0.0.88",
+    "saveSpec": null,
+    "fetchSpec": "0.0.88"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@project-sunbird/sb-themes/-/sb-themes-0.0.88.tgz",
+  "_shasum": "cd11ac1f3da915c7c433e6ac9e20ee29b6c52616",
+  "_spec": "@project-sunbird/sb-themes@0.0.88",
+  "_where": "/home/ttpl-rt-133/DG_Sunbird/SunbirdEd-portal-dg/src/app/client",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Sunbird-Ed/sb-themes/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@project-sunbird/sb-styles": "0.0.14"
+  },
+  "deprecated": false,
+  "description": "Sunbird project application themes",
+  "homepage": "https://github.com/Sunbird-Ed/sb-themes.git#readme",
+  "keywords": [
+    "angular",
+    "components",
+    "sunbird",
+    "Styles",
+    "Themes"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "@project-sunbird/sb-themes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunbird-Ed/sb-themes.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.88"
+}

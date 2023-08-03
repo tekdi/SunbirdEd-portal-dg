@@ -1,0 +1,199 @@
+/* css3 variable & sass variables */
+:root {
+  // base colors
+  --blue: #024f9d;
+  --green: #008840;
+  --orange: #e55a28;
+  --red: #ff4558;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --yellow: #ffc107;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --black: #000000;
+  --white: #ffffff;
+  --accessibility-red: #A30010;
+  // gray colors shades
+  --gray-hs: 0, 0%;
+  --gray: hsl(var(--gray-hs), 20%);
+  --gray-0: hsl(var(--gray-hs), 95%); // place holder active bg #F2F2F2
+  --gray-100: hsl(var(--gray-hs), 80%); // disable btn bg, icon color #CCCCCC
+  --gray-200: hsl(var(--gray-hs), 60%); // disable text, place holder text #999999
+  --gray-300: hsl(var(--gray-hs), 59%); // sub heading 2 #969696
+  --gray-400: hsl(var(--gray-hs), 40%); // sub heading #666666
+  --gray-800: var(--gray); // text color #333333
+
+  // basetheme
+  --primary-color: #024f9d;
+  --secondary-color: #008840;
+  --tertiary-color: #e55a28;
+
+  // primary colors
+  --primary-0: #f3f7fa; // bg
+  --primary-100: #edf4f9; // default button bg
+  --primary-200: #80a7ce; // divider
+  --primary-250: #d3e7f4; //pagination bg color
+  --primary-300: #7ab4ee; // outline, focus fields
+  --primary-400: var(--primary-color); // button bg, heading, table titles, links, toggles
+  --primary-600: #005391; // on press
+  --primary-800: #002e50; // hover
+  --primary-color-contrast: #fff;
+  --primary-color-contrast-rgb: rgb(255, 255, 255);
+  --primary-color-shade: var(--primary-800);
+  --primary-color-tint: var(--primary-200);
+
+  // secondary colors
+  --secondary-0: #e1ffdf; // toast bg, label
+  --secondary-100: #00c786; // button bg bg, toast
+  --secondary-200: #07bc81; // button bg
+  --secondary-400: var(--secondary-color); // hover
+
+  // tertiary colors
+  --tertiary-0: #feedd7; // toast bg, label
+  --tertiary-100: #ffa11d; // buttong bg, toast
+  --tertiary-400: var(--tertiary-color); // icon, label, notification bg
+
+  // red colors
+  --red-0: #fbccd1; // toast bg
+  --red-100: #ff6979; // buttong bg, toast
+  --red-400: var(--red); // icon color, lable, notification
+
+  // status colors
+  --info-color: var(--blue);
+  --success-color: var(--green);
+  --warning-color: var(--orange);
+  --danger-color: var(--red);
+
+  // element based variables
+  --body-background-color: var(--primary-0);
+  --default-text-color: var(--gray-800);
+  --bg-body: var(--primary-0);
+  --body-color: var(--gray-800);
+
+  // alpha
+  --alpha0: 0;
+  --alpha25: 0.25;
+  --alpha50: 0.5;
+  --alpha75: 0.75;
+
+  //random colors and backgrounds
+  --rc-f9f9f9: #f9f9f9; 
+  --rc-00abc7: #00abc7;
+  --rc-33B6CC: #33B6CC;
+  --rc-add8e6: #add8e6;
+  --rc-afd9e7: #afd9e7;
+  --rc-007AFF: #007AFF;
+  --rc-88B7E6: #88B7E6;
+  --rc-565c70: #565c70;
+  --rc-E0F1FD: #E0F1FD;
+  --rc-F3F8FF: #F3F8FF;
+  --rc-e2e3e5: #e2e3e5;
+  --rc-F7FFF5: #F7FFF5;
+  --rc-FCE6E6: #FCE6E6;
+  --rc-D3DED1: #D3DED1;
+  --rc-EBF6E0: #EBF6E0;
+  --rc-bfe1cf: #bfe1cf;
+  --rc-c4c4c4: #c4c4c4;
+  --rc-dddddd: #dddddd;
+  --rc-d0d0d0: #d0d0d0;
+  --rc-e0e0e0: #e0e0e0;
+  --rc-866A6A: #866a6a;
+  --rc-7c7b7b: #7c7b7b;
+  --rc-DECACA: #DECACA;
+  --rc-fcf2d6: #fcf2d6;
+  --rc-F5D7D7: #F5D7D7;
+  --rc-ffb300: #ffb300; 
+  --rc-E08A20: #E08A20;
+  --rc-DD680F: #DD680F;
+
+  --rc-rgba-black: 0, 0, 0; // var(--black)
+  --rc-rgba-white: 255, 255, 255; // var(--white)
+  --rc-rgba-gray: 51, 51, 51; // var(--gray-300)
+  --rc-rgba-primary: 2, 79, 157; // var(--primary-color)
+  --rc-rgba-primary-300: 41, 114, 164; //var(--primary-300)
+  --rc-rgba-gray-300: 34, 36, 38; //var(--gray-100)
+  --rc-rgba-866a6a: 134, 106, 106;
+  --rc-rgba-d0d0d0: 208, 208, 208;
+  --rc-rgba-7b86f4: 123, 134, 244;
+  --rc-rgba-C8D6EA: 200, 214, 234;
+
+  // shadows
+  --sbt-box-shadow-black: rgba(0, 0, 0, 0.1);
+  --sbt-box-shadow-6px: 0.375rem 0.375rem 0.125rem 0 var(--sbt-box-shadow-black);
+  --sbt-box-shadow-3px: 0.1875rem 0.1875rem 0.125rem 0 var(--sbt-box-shadow-black);
+  --sbt-box-shadow: rgba(128, 167, 206, 1);
+
+  // lazy loading
+  --lazyload-bg: #f6f7f8;
+  --grey-nuance-lighter: #eeeeee;
+  --grey-nuance-darker: #dddddd;
+  --fade-grey: #e8e8e8;
+
+  // These colors Not used in portal
+  --rc-e6c8c8: var(--rc-F5D7D7); 
+  --rc-f56b56: var(--tertiary-100); 
+  --rc-e5e5e5: var(--rc-e0e0e0); 
+  --rc-424242: var(--gray-800); 
+  --rc-E0EFFF: var(--rc-E0F1FD); 
+  --rc-1b1c1d: var(--black); 
+  --rc-252525: var(--black); 
+  --rc-979797: var(--gray-200); 
+  --rc-9F9F9F: var(--gray-300); 
+  --rc-9b9b9b: var(--gray-300); 
+  --rc-BCBEC0: var(--gray-100); 
+  --rc-d4d4d5: var(--gray-100); 
+  --rc-d4d8da: var(--gray-100); 
+  --rc-d8dee2: var(--gray-100); 
+  --rc-c2c2c2: var(--gray-100); 
+  --rc-c3c3c3: var(--gray-100); 
+  --rc-a9a9a9: var(--gray-200); 
+  --rc-f5f5f5: var(--gray-0); 
+  --rc-bbbbbb: var(--gray-200); 
+  --rc-aaaaaa: var(--gray-200); 
+  --rc-00BD7F: var(--secondary-100); 
+  --rc-009D53: var(--secondary-400); 
+  --rc-2ca58d: var(--secondary-color); 
+  --rc-fff6f6: var(--gray-0); 
+  --rc-f7f7f7: var(--gray-0); 
+  --rc-eeeeee: var(--gray-0); 
+  --rc-F6F6F6: var(--gray-0); 
+  --rc-FAFAFA: var(--gray-0); 
+  --rc-bdbdbd: var(--gray-100); 
+  --rc-dc523d: var(--tertiary-color); 
+  --rc-e65c47: var(--tertiary-color); 
+  --rc-6D7278: #6D7278; 
+  --rc-91aecc: #91aecc;  
+  --rc-2972a4: #2972a4; 
+  --rc-2f4272: #2f4272; 
+  --rc-042D55: #042D55; 
+  --rc-66c7f4: #66c7f4; 
+  --rc-289fd9: #289fd9; 
+  --rc-7b86f4: #7b86f4; 
+  --rc-2361ff: #2361ff; 
+  --rc-1B4785: #1B4785; 
+  --rc-196DAB: #196DAB; 
+  --rc-5c8db7: #5c8db7; 
+  --rc-2dadc2: var(--rc-00abc7); 
+  --rc-0fbad6: var(--rc-33B6CC); 
+  --rc-96C8DA: var(--rc-add8e6); 
+  --rc-0076FE: var(--rc-007AFF); 
+  --rc-4a4a4a: var(--rc-424242); 
+  --rc-80A7CE: var(--rc-91aecc); 
+  --rc-C8D6EA: var(--rc-E0EFFF); 
+  --rc-E5EDF5: var(--rc-E0F1FD); 
+  --rc-D9E4F2: var(--rc-E0F1FD); 
+  --rc-F5F9FC: var(--rc-F3F8FF); 
+  --rc-e0e1e2: var(--rc-e2e3e5); 
+  --rc-dededf: var(--rc-e2e3e5); 
+  --rc-dedede: var(--rc-e2e3e5); 
+  --rc-d2ddc7: var(--rc-D3DED1); 
+  --rc-f7ffec: var(--rc-F7FFF5); 
+  --rc-fdfdfd: var(--rc-f9f9f9); 
+  --rc-ffe1e1: var(--rc-FCE6E6); 
+  --rc-d8d8d8: var(--rc-d0d0d0); 
+  --rc-e9e5e5: var(--rc-dddddd); 
+  --rc-d4d3d3: var(--rc-dddddd); 
+  --rc-cecece: var(--rc-d0d0d0); 
+  --rc-e68900: var(--rc-E08A20); 
+}

@@ -1,0 +1,30 @@
+jobs: 
+  build: 
+    docker: 
+      - image: "circleci/node:12.13.0"
+    steps: 
+      - checkout
+      - run: 
+          command: "node -v"
+          name: "Check current version of node"
+      - restore_cache: 
+          keys: 
+            - "node_modules_cache_{{ checksum \"package-lock.json\" }}"
+      - run: 
+          command: |
+              if [ ! -d "node_modules" ]; then
+              npm ci -f
+              fi
+          name: "Install project dependencies"
+      - save_cache: 
+          key: "node_modules_cache_{{ checksum \"package-lock.json\" }}"
+          paths: 
+            - node_modules
+      - run: 
+          command: |-
+              if [ -z $CIRCLE_PR_NUMBER ]; then
+               echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+               npm publish
+              fi
+          name: "Publish to NPM"
+version: 2.1
