@@ -134,15 +134,17 @@ export class AppComponent implements OnInit, OnDestroy {
     public changeDetectorRef: ChangeDetectorRef, public layoutService: LayoutService,
     public generaliseLabelService: GeneraliseLabelService, private renderer: Renderer2, private zone: NgZone,
     private connectionService: ConnectionService, public genericResourceService: GenericResourceService) {
-    this.instance = (<HTMLInputElement>document.getElementById('instance'))
-      ? (<HTMLInputElement>document.getElementById('instance')).value : 'sunbird';
-    const layoutType = localStorage.getItem('layoutType') || 'base';
-    if (layoutType === 'base' || layoutType === 'joy') {
-      this.layoutConfiguration = this.configService.appConfig.layoutConfiguration;
-      document.documentElement.setAttribute('layout', 'joy');
-    } else {
-      document.documentElement.setAttribute('layout', 'base');
-    }
+    // this.instance = (<HTMLInputElement>document.getElementById('instance'))
+    //   ? (<HTMLInputElement>document.getElementById('instance')).value : 'sunbird';
+    // const layoutType = localStorage.getItem('layoutType') || 'base';
+    // if (layoutType === 'base' || layoutType === 'joy') {
+    //   this.layoutConfiguration = this.configService.appConfig.layoutConfiguration;
+    //   document.documentElement.setAttribute('layout', 'joy');
+    // } else {
+    //   document.documentElement.setAttribute('layout', 'base');
+    // }
+      document.documentElement.setAttribute('layout', 'digital-green');
+
   }
   /**
    * dispatch telemetry window unload event before browser closes

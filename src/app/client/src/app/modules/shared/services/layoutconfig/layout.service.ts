@@ -93,8 +93,8 @@ export class LayoutService {
 
     } else {
       this.layoutConfig = this.configService.appConfig.layoutConfiguration;
-      document.documentElement.setAttribute('layout', 'joy');
-      localStorage.setItem('layoutType', 'joy');
+      document.documentElement.setAttribute('layout', 'digital-green');
+      localStorage.setItem('layoutType', 'digital-green');
     }
     this.setLayoutConfig(this.layoutConfig);
   }

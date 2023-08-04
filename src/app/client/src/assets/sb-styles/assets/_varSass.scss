@@ -96,3 +96,107 @@ $p-font-size: var(--font-size-base); //14px
 
 // spaces
 $base-block-space: 0.5rem;
+
+/* DIGITAL GREEN
+* The existing sass variables are preserved for future reference.
+* Overriding the desired sass variables with Digital Green sass variables
+*/
+
+
+// Base Theme
+$--primary-color: var(--primary-color);
+$--secondary-color: var(--secondary-color);
+$--accent-color: var(--accent-color);
+$--gray: var(--gray);
+$--background-color: var(--background-color);
+
+$--success-color: var(--success-color);
+$--info-color: var(--info-color);
+$--warning-color: var(--warning-color);
+$--error-color: var(--error-color);   // can be changed to danger
+
+// Primary colors
+$--primary-200: var(--primary-200);
+$--primary-300: var(--primary-300);
+$--primary-400: var(--primary-400);
+
+// Secondary colors    
+$--secondary-200: var(--secondary-200);  
+$--secondary-400: var(--secondary-400);
+$--secondary-500: var(--secondary-500);
+$--secondary-600: var(--secondary-600);
+$--secondary-700: var(--secondary-700);
+
+// Accent colors
+$--accent-10: var(--accent-10);  
+$--accent-50: var(--accent-50);
+$--accent-100: var(--accent-100);
+$--accent-200: var(--accent-200);
+$--accent-300: var(--accent-300);
+$--accent-400: var(--accent-400);
+
+// Gray colors
+// opacity: 0.6000000238418579;
+$--gray-100: var(--gray-100);
+$--gray-200: var(--gray-200);
+$--gray-300: var(--gray-300);
+$--gray-400: var(--gray-400);
+$--gray-500: var(--gray-500);
+$--gray-600: var(--gray-600);
+
+// Background
+$--background-100: var(--background-100);
+
+// Shades
+$--shades-50: var(--shades-50);
+$--shades-100: var(--shades-100);
+
+// Success
+$--success-400: var(--success-400);
+$--success-500: var(--success-500);
+
+// Information
+$--info-400: var(--info-400);
+$--info-500: var(--info-600);
+
+// Warning colors
+$--warning-400: var(--warning-400);
+$--warning-500: var(--warning-500);
+$--warning-600: var(--warning-600);
+$--warning-700: var(--warning-700);
+
+// Error colors
+$--error-100: var(--error-100);
+$--error-200: var(--error-200);
+$--error-300: var(--error-300);
+$--error-400: var(--error-400);
+$--error-500: var(--error-500);
+
+/* Fonts */
+
+$font-stack-en: var(--font-stack-en);
+
+$font-weight-normal: var(--font-weight-normal);
+$font-weight-semi-bold: var(--font-weight-semi-bold);
+$font-weight-bold: var(--font-weight-bold);
+
+$font-default-size: var(--font-default-size);
+$font-size-base: var(--font-size-base); // 14px Assumes the browser default, typically `16px`
+
+$h1-font-size: var(--h1-font-size); // 32px
+$h2-font-size: var(--h2-font-size); // 28px
+$h3-font-size: var(--h3-font-size); // 24px
+$h4-font-size: var(--h4-font-size); // 20px
+
+$font-size-lg: var(--h4-font-size); //20px
+$font-size-md: var(--h5-font-size); // 16px
+$font-size-normal: var(--font-size-base); // 14px
+$font-size-sm: var(--font-size-sm); // 12px
+$font-size-xs: var(--font-size-xs); // 10px
+$p-font-size: var(--font-size-base); //14px
+
+
+$body-background-color: var(--primary-0);
+$default-text-color: var(--gray-600);
+$bg-body: var(--primary-0);
+$body-color: var(--gray-600);
